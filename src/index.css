@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  /* Light mode colors */
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --primary: #007bff;
+  --secondary: #f8f9fa;
+  --accent: #dc3545;
+  --muted: #e9ecef;
+
+  /* Dark mode colors */
+  --background-dark: #1a1a1a;
+  --foreground-dark: #ffffff;
+  --primary-dark: #0056b3;
+  --secondary-dark: #212529;
+  --accent-dark: #c82333;
+  --muted-dark: #343a40;
+
+  /* Lighter variants */
+  --primary-lighter: #009bff;
+  --secondary-lighter: #f1f3f5;
+  --accent-lighter: #e03145;
+  --muted-lighter: #f8f9fa;
+}
+
+@layer base {
+  :root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  /* Dark mode utilities */
+  [data-mode="dark"] {
+    --background: var(--background-dark);
+    --foreground: var(--foreground-dark);
+    --primary: var(--primary-dark);
+    --secondary: var(--secondary-dark);
+    --accent: var(--accent-dark);
+    --muted: var(--muted-dark);
+  }
+}
